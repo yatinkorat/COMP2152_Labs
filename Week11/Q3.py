@@ -1,48 +1,46 @@
-# ============================================================
-#  WEEK 11 LAB — Q3: VULNERABILITY REPORT
-#  COMP2152 — Yatin Korat
-# ============================================================
-#
-#  For the term project, each team member finds a vulnerability
-#  and writes a report. This class represents those findings
-#  and organizes them into a team report.
-#
-# ============================================================
-
-
 class Finding:
-
     def __init__(self, subdomain, title, severity, description):
         self.subdomain = subdomain
         self.title = title
         self.severity = severity
         self.description = description
-
     def __str__(self):
         return f"[{self.severity}] {self.subdomain} — {self.title}"
 
-
 class Report:
-
     def __init__(self, team_name):
         self.team_name = team_name
         self.findings = []
 
+
+
+
+
     def add_finding(self, finding):
-        self.add_finding.app(finding)
+        self.findings.append(finding)
+
 
     def get_by_severity(self, severity):
-        return [f for f in self.findings if self.severity == severity]
+        return [f for f in self.findings if f.severity == severity]
 
     def summary(self):
         print(f"    Team: {self.team_name}")
         print(f"    Total finding: {len(self.findings)}")
-        print(f"    HIGH:    {len(self.get_by_severity('HIGH'))}")
-        print(f"    MEDIUM:    {len(self.get_by_severity('MEDIUM'))}")
-        print(f"    LOW:    {len(self.get_by_severity('LOW'))}")
-        print(f"    "+"-" * 40)
+        print(f"    HIGH:   {len(self.get_by_severity('HIGH'))}")
+        print(f"    MEDIUM:   {len(self.get_by_severity('MEDIUM'))}")
+        print(f"    LOW:   {len(self.get_by_severity('LOW'))}")
+        print(f"  " + "-" * 40)
         for f in self.findings:
-            print(f"   {f}")
+            print(f"    {f}")
+
+
+
+
+
+
+
+
+
 
 
 # --- Main (provided) ---
