@@ -1,3 +1,14 @@
+# ============================================================
+#  WEEK 11 LAB — Q3: VULNERABILITY REPORT
+#  COMP2152 — Yatin Korat
+# ============================================================
+#
+#  For the term project, each team member finds a vulnerability
+#  and writes a report. This class represents those findings
+#  and organizes them into a team report.
+#
+# ============================================================
+
 class Finding:
     def __init__(self, subdomain, title, severity, description):
         self.subdomain = subdomain
@@ -11,10 +22,6 @@ class Report:
     def __init__(self, team_name):
         self.team_name = team_name
         self.findings = []
-
-
-
-
 
     def add_finding(self, finding):
         self.findings.append(finding)
@@ -32,15 +39,6 @@ class Report:
         print(f"  " + "-" * 40)
         for f in self.findings:
             print(f"    {f}")
-
-
-
-
-
-
-
-
-
 
 
 # --- Main (provided) ---
